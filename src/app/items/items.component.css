@@ -1,0 +1,31 @@
+h3 {
+  margin: 10px auto;
+}
+span#left {
+  float: left;
+}
+span#right {
+  float: right;
+}
+.card {
+  flex: 1 0 21%;
+  margin: 20px;
+}
+.card-img {
+  margin-left: 10px;
+}
+.items-display {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.STOCK_HIGH {
+  color: red;
+}
+.STOCK_MEDIUM {
+  color: orange;
+}
+.STOCK_LOW {
+  color: green;
+}

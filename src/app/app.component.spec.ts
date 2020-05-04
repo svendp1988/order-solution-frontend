@@ -19,13 +19,6 @@ describe('AppComponent', () => {
   it(`should have as title 'order-solution-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('order-solution-frontend');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('order-solution-frontend app is running!');
+    expect(app.title).toEqual('ÖRDER');
   });
 });
