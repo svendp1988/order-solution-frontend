@@ -2,8 +2,11 @@
   <h1 class="display-4">Items</h1>
   <p class="lead">Welcome to our items-page, feel free to look around</p>
   <hr class="my-4">
+  <div class="search-item">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for an item by name">
+  </div>
   <div class="items-display">
-    <div class="card col-1-4" style="width: 18rem;" *ngFor="let item of items">
+    <div class="card col-1-4" style="width: 18rem;" *ngFor="let item of items | filter:searchText">
       <h3 class="card-title">{{item.name | uppercase}}</h3>
       <img src="https://www.retaildetail.be/sites/default/files/news/Duvel-shutterstock-198519845.jpg"
            class="card-img-top" alt="..." width="100px" height="auto">
@@ -11,7 +14,8 @@
         <div><span id="left">price:&nbsp;</span> {{item.price | currency: 'EUR'}}
           <span id="right" [ngClass]="item.stockUrgency">{{item.stockUrgency | titlecase}}</span>
         </div>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-primary"
+           routerLink="/detail/{{item.id}}">Details</a>
       </div>
     </div>
   </div>

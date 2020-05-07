@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import { Item } from './item';
 import { ItemService } from '../item.service';
-import {StockUrgency} from './stockurgency';
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.css']
 })
+@Injectable({
+  providedIn: 'root'
+})
 export class ItemsComponent implements OnInit {
   items: Item[];
+  searchText;
+  selectedItem: Item;
 
 
   constructor(private itemService: ItemService) { }
@@ -23,11 +27,7 @@ export class ItemsComponent implements OnInit {
       .subscribe(items => this.items = items);
   }
 
-  getItem(id: string): void {
-
+  onSelect(item: Item) {
+    this.selectedItem = item;
   }
-
-  // setCorrectImage(): void {
-  //   document.getElementById('stockUrgency').src = "../../assets/img/red.png";
-  // }
 }
