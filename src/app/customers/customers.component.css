@@ -1,0 +1,15 @@
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  width: 25%;
+  text-align: center;
+}
+button {
+  box-shadow: 5px 5px 8px #888888;
+  margin: 0 20px;
+}
+button:first-of-type {
+  margin: 0 auto;
+}
+div#buttons {
+  display: flex;
+  justify-content: space-between;
+}

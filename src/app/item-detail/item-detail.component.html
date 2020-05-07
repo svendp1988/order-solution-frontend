@@ -1,0 +1,37 @@
+<div *ngIf="item" class="jumbotron">
+  <h1 class="display-4">{{item.name | uppercase}} Details</h1>
+  <p class="lead">A more detailed overview</p>
+  <hr class="my-4">
+  <div class="items-display">
+    <div class="container">
+
+      <!-- Portfolio Item Heading -->
+      <h1 class="my-4">{{item.name}}
+        <small>{{item.id}}</small>
+      </h1>
+
+      <!-- Portfolio Item Row -->
+      <div class="row">
+
+        <div class="col-md-8">
+          <img class="img-fluid"
+               src="https://www.retaildetail.be/sites/default/files/news/Duvel-shutterstock-198519845.jpg" alt="">
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3">Item Description</h3>
+          <p>{{item.description}}</p>
+          <h3 class="my-3">Item Details</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Price: {{item.price | currency: 'EUR'}}</li>
+            <li class="list-group-item">Amount in stock: {{item.amountOfStock}}</li>
+          </ul>
+          <button type="button" class="btn btn-secondary btn-lg" (click)="goBack()">Back</button>
+          <button type="button" class="btn btn-secondary btn-lg" routerLink="/update/{{item.id}}">Edit</button>
+        </div>
+
+      </div>
+      <!-- /.row -->
+      <div class="clearfix"></div>
+    </div>
+  </div>
